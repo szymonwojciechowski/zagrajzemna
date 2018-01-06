@@ -11,9 +11,10 @@ using ZagrajZeMna.Data;
 namespace ZagrajZeMna.Migrations
 {
     [DbContext(typeof(BoardGameContext))]
-    partial class BoardGameContextModelSnapshot : ModelSnapshot
+    [Migration("20180106203324_Identity")]
+    partial class Identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
