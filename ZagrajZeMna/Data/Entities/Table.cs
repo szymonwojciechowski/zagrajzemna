@@ -11,5 +11,7 @@ namespace ZagrajZeMna.Data.Entities
         public string Localization { get; set; }
         public DateTime Date { get; set; }
         public Game Game { get; set; }
+        public User Owner { get; set; }
+
     }
 }
