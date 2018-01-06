@@ -16,19 +16,28 @@ namespace ZagrajZeMna
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BoardGameContext>(cfg =>
             {
-                cfg.UseSqlServer(Configuration.GetConnectionString("BoardGameConnectionString"));
+                if (Environment.IsEnvironment("macOS"))
+                {
+                    cfg.UseInMemoryDatabase("BoardGameConnectionString");
+                }
+                else
+                {
+                    cfg.UseSqlServer(Configuration.GetConnectionString("BoardGameConnectionString"));
+                }
             });
             services.AddAutoMapper();
             services.AddTransient<BoardGameSeeder>();
@@ -38,16 +47,16 @@ namespace ZagrajZeMna
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
+            if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseMvc();
 
-            if (env.IsDevelopment())
+            if (Environment.IsDevelopment() || Environment.IsEnvironment("macOS"))
             {
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
