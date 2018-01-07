@@ -1,0 +1,67 @@
+.btn,
+.button {
+  width: 250px;
+  height: 40px;
+  transition: background-color 0.2s;
+  border: 0;
+  outline: 0;
+  background: $green;
+  color: #fff;
+  font-size: 14px;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($green, 10%);
+    color: #fff;
+  }
+}
+
+.btn {
+  &--wide {
+    display: block;
+    width: 100%;
+  }
+
+  &--small {
+    width: auto;
+    padding: 0 15px;
+  }
+
+  &--border{
+    background: transparent;
+    border: 2px solid $green;
+    color: $green;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $green;
+      color: #fff;
+    }
+  }
+
+  &--light {
+    background: none;
+    color: $font-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background: $green;
+    }
+  }
+
+  &--violet{
+    background: $violet;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken($violet, 10%);
+    }
+  }
+}

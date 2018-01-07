@@ -1,0 +1,57 @@
+@import './../../scss/helpers/variables';
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 9000;
+  border-bottom: 2px solid $gray-light;
+  background: $gray-lighter;
+
+  &__logo{
+
+    p{
+      margin: 0;
+      line-height: 40px;
+    }
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu{
+    display: flex;
+  }
+
+  &__nav{
+    margin-left: 10px;
+  }
+}
+
+.btn-nav{
+  width: 30px;
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  &__line{
+    width: 25px;
+    height: 4px;
+    margin: 0 auto 4px;
+    background: $violet;
+    display: block;
+
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}
