@@ -1,0 +1,45 @@
+// Colors
+$gray:          #dcdce1;
+$gray-light:    #f2f2f5;
+$gray-light2:   #a2a2af;
+$gray-lighter:  #fafafa;
+$gray-dark:     #242424;
+$gray-dark-2:   #343434;
+$green:         #6ed3cf;
+$violet:        #9068be;
+$red:           #e62739;
+$shadow-color:  rgba(35, 35, 39, .3);
+
+/* Typography  */
+$base-family: 'Lato', 'Arial', sans-serif;
+$font-color: $gray-dark-2;
+
+/* Animations  */
+$animation-background: 6s;
+$animation-form: .5s;
+$animation-delay: 1.25s;
+$animation-delay-2: 1.5s;
+$cubic-brazier: cubic-bezier(.500, .250, .310, .955);
+
+/* Breakpoints */
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+
+// Large screen / wide desktop
+$screen-lg-xl:               1600px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm - 1) !default;
+$screen-sm-max:              ($screen-md - 1) !default;
+$screen-md-max:              ($screen-lg - 1) !default;
+
+

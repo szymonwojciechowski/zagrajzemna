@@ -1,0 +1,21 @@
+body {
+  padding-top: 70px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+
+  @media #{$media-to-md} {
+    width: 920px;
+  }
+
+  @media #{$media-to-sm} {
+    width: 720px;
+  }
+
+  @media #{$media-xs} {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

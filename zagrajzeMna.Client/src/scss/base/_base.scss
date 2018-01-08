@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $gray-lighter;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+
+  li{
+    padding: 5px 0;
+  }
+}
+
+.hidden {
+  display: none !important; //reason - always override other display
+}
+
