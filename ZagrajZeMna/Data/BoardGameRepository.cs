@@ -63,7 +63,7 @@ namespace ZagrajZeMna.Data
         {
             try
             {
-                return _ctx.Tables.Include(t => t.Game).ToList();
+                return _ctx.Tables.Include(t => t.Game).Include(t => t.Owner).ToList();
             }
             catch (Exception e)
             {

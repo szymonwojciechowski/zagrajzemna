@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using ZagrajZeMna.Data;
 using ZagrajZeMna.Data.Entities;
 using ZagrajZeMna.ViewModels;
@@ -10,6 +12,8 @@ using ZagrajZeMna.ViewModels;
 namespace ZagrajZeMna.Controllers
 {
     [Route("api/[Controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class TablesController : Controller
     {
         private readonly IBoardGameRepository _repository;
